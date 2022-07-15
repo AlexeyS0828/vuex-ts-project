@@ -22,7 +22,7 @@ export type Actions = {
 
 const sleep = (ms: number) => new Promise(resolve => setTimeout(resolve, ms))
 export const actions: ActionTree<State, State> & Actions = {
-  async [ActionTypes.GetTaskItems]({ commit }) {
+  async [ActionTypes.GetTaskItems] ({ commit }) {
     commit(MutationType.SetLoading, true)
     await sleep(1000)
     commit(MutationType.SetLoading, false)
@@ -30,19 +30,18 @@ export const actions: ActionTree<State, State> & Actions = {
       {
         id: 1,
         title: 'Create a new programming language',
-        description: "The programing language should have full typescript support ",
-        createdBy: "Emmanuel John",
-        assignedTo: "Saviour Peter",
+        description: 'The programing language should have full typescript support ',
+        createdBy: 'Emmanuel John',
+        assignedTo: 'Saviour Peter',
         completed: false,
         editing: false
       }
     ])
   },
-  async [ActionTypes.SetCreateModal]({ commit }) {
+  async [ActionTypes.SetCreateModal] ({ commit }) {
     commit(MutationType.SetCreateModal, true)
   },
-  async [ActionTypes.SetEditModal]({ commit }) {
-    commit(MutationType.SetEditModal, {showModal: true, taskId: 1})
+  async [ActionTypes.SetEditModal] ({ commit }) {
+    commit(MutationType.SetEditModal, { showModal: true, taskId: 1 })
   }
 }
-

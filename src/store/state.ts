@@ -8,6 +8,7 @@ export type TaskItem = {
   completed: boolean;
   editing: boolean;
 };
+
 export type State = {
   loading: boolean;
   tasks: TaskItem[];
@@ -17,6 +18,7 @@ export type State = {
   editModalTaskId: number | undefined;
   showTaskId: number | undefined;
 };
+
 export const state: State = {
   loading: false,
   tasks: [],
@@ -24,5 +26,5 @@ export const state: State = {
   showEditModal: false,
   showTaskModal: false,
   editModalTaskId: undefined,
-  showTaskId: undefined,
-};
+  showTaskId: undefined
+}
